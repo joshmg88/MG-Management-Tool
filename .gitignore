@@ -19,3 +19,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.env
+
+# google
+# client ID 1031135310124-1u5q6qr36l3l8a1k49fpb7p0jtbni1c4.apps.googleusercontent.com
+
+# client secret QrycCM3fT92c6O78KY2A-Uh_
