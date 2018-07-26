@@ -6,12 +6,14 @@ import Employer from './components/Employer/Employer'
 import Home from './components/Home/Home'
 import Jobs from './components/Jobs/Jobs'
 import EmployeeList from './components/EmployeeList/EmployeeList';
+import EditProfile from './components/EditProfile/EditProfile'
 
 export default (
     <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/employer' component={Employer} />
         <Route path='/employeeprofile' component={EmployeeProfile} />
+        <Route path='/editprofile' component={EditProfile} />
         <Route path='/employeelist' component={EmployeeList} />
         <Route path='/jobs' component={Jobs} />
     </Switch>

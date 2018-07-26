@@ -7,6 +7,7 @@ const logout = (req, res) => {
 }
 
 const getUser = (req, res) => {
+    console.log(req.user)
     if (!req.user) {
         res.status(500).send({ message: 'Not Logged In' })
     } else {
