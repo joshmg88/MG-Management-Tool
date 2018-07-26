@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import Login from '../Login/Login';
+import './Header.css'
+import Login from '../Login/Login';
 
 
 const Header = () => {
@@ -12,6 +13,7 @@ const Header = () => {
                 <Link to='/employer'>Employer</Link>
                 <Link to='/jobs'>Jobs</Link>
                 <Link to='/employeelist'>Employee List</Link>
+                <Login />
 
             </nav>
         </div>
@@ -19,4 +21,3 @@ const Header = () => {
 };
 
 export default Header;
-        // <Login />

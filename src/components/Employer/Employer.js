@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getEmployees } from '../../ducks/employeeReducer'
+import JobForm from '../Jobs/JobForm'
 
 class Employer extends Component {
 
@@ -9,15 +10,17 @@ class Employer extends Component {
     }
 
     render() {
-        const { getEmployees } = this.props.getEmployees
+        // console.log(this.props.getEmployees);
+        const { employees } = this.props.employee
 
-        let employeeList = getEmployees.map((employees, i) => {
+        let employeeList = employees.map((employees, i) => {
             return <p key={i}>{employees.name}{employees.address}</p>
         })
         return (
             <div>
                 <h2>Employer Profile</h2>
                 {employeeList}
+                <JobForm />
 
             </div>
         );

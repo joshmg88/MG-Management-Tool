@@ -6,7 +6,7 @@ import jobReducer from './jobReducer'
 
 const combinedReducers = combineReducers({
     employee: employeeReducer,
-    jobs: jobReducer
+    job: jobReducer
 })
 
 const middlewares = applyMiddleware(promiseMiddleware())

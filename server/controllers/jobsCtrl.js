@@ -5,6 +5,27 @@ const getJobs = (req, res, next) => {
     }).catch(err => { console.log(err) })
 }
 
+const addJob = (req, res, next) => {
+    let { customerName, customerAddress, jobDescription, estPrice } = req.body
+    const db = req.app.get('db')
+    db.jobs.add_Job([customerName, customerAddress, jobDescription, estPrice])
+        .then(newJob => {
+            res.status(200).send(newJob)
+        }).catch(err => { console.log(err) })
+
+}
+
+const deleteJob = (req, res, next) => {
+    console.log(req.params.id)
+    const db = req.app.get('db')
+    db.jobs.delete_job(req.params.id)
+        .then(job => {
+            res.status(200).send(job)
+        }).catch(err => { console.log(err) })
+}
+
 module.exports = {
-    getJobs
+    getJobs,
+    addJob,
+    deleteJob
 }

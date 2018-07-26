@@ -61,11 +61,16 @@ massive(process.env.CONNECTION_STRING)
 
 
 app.get('/api/employees', emplCtrl.getEmployees)
-app.get('/api/jobs', jobsCtrl.getJobs)
+app.get('/api/getJobs', jobsCtrl.getJobs)
+app.post('/api/addJob', jobsCtrl.addJob)
+app.delete('/api/deleteJob/:id', jobsCtrl.deleteJob)
 
 app.get('/login', login);
 app.get('/logout', logout);
 app.get('/api/me', getUser);
+
+
+
 
 app.listen(port, () => {
     console.log(`listening on port: ${port}`)
