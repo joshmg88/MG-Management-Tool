@@ -1,13 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-class SecretRoute extends Component {
-    render() {
-        return (
-            <div>
 
-            </div>
-        );
-    }
+const SecretRoute = (props) => {
+    let { component: Component, user } = props;
+
+    return (
+        <Route path={props.path} render={props => {
+            if (user.user.id) {
+                return <Component {...props} />
+            } else {
+                return <Redirect to="/" />
+            }
+        }} />
+    )
 }
 
-export default SecretRoute;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps, null)(SecretRoute)

@@ -7,14 +7,15 @@ import Home from './components/Home/Home'
 import Jobs from './components/Jobs/Jobs'
 import EmployeeList from './components/EmployeeList/EmployeeList';
 import EditProfile from './components/EditProfile/EditProfile'
+import SecretRoute from './components/Secretroute/SecretRoute';
 
 export default (
     <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/employer' component={Employer} />
-        <Route path='/employeeprofile' component={EmployeeProfile} />
-        <Route path='/editprofile' component={EditProfile} />
-        <Route path='/employeelist' component={EmployeeList} />
-        <Route path='/jobs' component={Jobs} />
+        <SecretRoute path='/employer' component={Employer} />
+        <SecretRoute path='/employeeprofile' component={EmployeeProfile} />
+        <SecretRoute path='/editprofile' component={EditProfile} />
+        <SecretRoute path='/employeelist' component={EmployeeList} />
+        <SecretRoute path='/jobs' component={Jobs} />
     </Switch>
 )
