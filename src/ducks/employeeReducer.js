@@ -3,6 +3,7 @@ import axios from 'axios'
 const GET_EMPLOYEES = 'GET_EMPLOYEES'
 const ADD_EMPLOYEES = 'ADD_EMPLOYEES'
 const DELETE_EMPLOYEES = 'DELETE_EMPLOYEES'
+const EDIT_PROFILE = 'EDIT_PROFILE'
 
 export function getEmployees() {
     return {
@@ -25,6 +26,13 @@ export function deleteEmployee(employees) {
     }
 }
 
+export function editProfile(profile) {
+    return {
+        type: EDIT_PROFILE,
+        payload: axios.put('/api/editProfile', profile)
+    }
+}
+
 const initialState = {
     employees: [],
     didErr: false
@@ -35,6 +43,7 @@ export default function employeeReducer(state = initialState, action) {
         case `${GET_EMPLOYEES}_FULFILLED`:
         case `${ADD_EMPLOYEES}_FULFILLED`:
         case `${DELETE_EMPLOYEES}_FULFILLED`:
+        case `${EDIT_PROFILE}_FULFILLED`:
             return {
                 ...state,
                 employees: action.payload.data
@@ -42,6 +51,7 @@ export default function employeeReducer(state = initialState, action) {
         case `${GET_EMPLOYEES}_REJECTED`:
         case `${ADD_EMPLOYEES}_REJECTED`:
         case `${DELETE_EMPLOYEES}_REJECTED`:
+        case `${EDIT_PROFILE}_REJECTED`:
             return {
                 ...state,
                 didErr: true
