@@ -5,6 +5,14 @@ const getEmployees = (req, res, next) => {
     }).catch(err => { console.log(err) })
 }
 
+const getProfile = (req, res, next) => {
+    const db = req.app.get('db')
+    db.employees.get_profile().then(results => {
+        console.log("current profile", results[0])
+        res.status(200).send(results[0])
+    }).catch(err => { console.log(err) })
+}
+
 const editProfile = (req, res, next) => {
     // console.log(req.body)
     let { editEmail, editAddress, editPhone, editImage, id } = req.body
@@ -16,5 +24,6 @@ const editProfile = (req, res, next) => {
 
 module.exports = {
     getEmployees,
-    editProfile
+    editProfile,
+    getProfile
 }

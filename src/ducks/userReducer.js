@@ -11,7 +11,7 @@ export function getUser() {
 }
 
 export function updateRole(role, id) {
-    console.log(role, id)
+    // console.log(role, id)
     return {
         type: UPDATE_ROLE,
         payload: axios.put('/api/updateRole', { role, id })
@@ -27,6 +27,7 @@ export default function userReducer(state = initialState, action) {
     // console.log(action.payload)
     switch (action.type) {
         case `${GET_USER}_FULFILLED`:
+            console.log("userReducer", action.payload)
             return {
                 ...state,
                 user: action.payload.data

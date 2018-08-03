@@ -63,6 +63,7 @@ massive(process.env.CONNECTION_STRING)
 
 app.get('/api/employees', emplCtrl.getEmployees)
 app.put('/api/editProfile', emplCtrl.editProfile)
+app.get('/api/profile', emplCtrl.getProfile)
 app.get('/api/getJobs', jobsCtrl.getJobs)
 app.post('/api/addJob', jobsCtrl.addJob)
 app.delete('/api/deleteJob/:id', jobsCtrl.deleteJob)

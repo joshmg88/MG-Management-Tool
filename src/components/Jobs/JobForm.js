@@ -10,7 +10,8 @@ class JobForm extends Component {
             customerName: '',
             customerAddress: '',
             jobDescription: '',
-            estPrice: 0
+            estPrice: 0,
+            estHours: 0
         };
     }
 
@@ -22,7 +23,7 @@ class JobForm extends Component {
 
     render() {
         // console.log(this.props);
-        let { customerName, customerAddress, jobDescription, estPrice } = this.state;
+        let { customerName, customerAddress, jobDescription, estPrice, estHours } = this.state;
         return (
             <form>
                 <label>
@@ -49,7 +50,13 @@ class JobForm extends Component {
                     <input type="number" value={this.state.estPrice} onChange={(e) => this.handleInputs(e.target.value, "estPrice")} />
                 </label>
                 <br />
-                <button onClick={() => this.props.addJob({ customerName, customerAddress, jobDescription, estPrice })}>Submit</button>
+                <label>
+                    Hours:
+                    <br />
+                    <input type="number" value={this.state.estHours} onChange={(e) => this.handleInputs(e.target.value, "estHours")} />
+                </label>
+                <br />
+                <button onClick={() => this.props.addJob({ customerName, customerAddress, jobDescription, estPrice, estHours })}>Submit</button>
 
 
             </form>

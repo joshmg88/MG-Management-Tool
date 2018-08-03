@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { editProfile } from '../../ducks/employeeReducer'
+import { editProfile, getProfile } from '../../ducks/employeeReducer'
 import { connect } from 'react-redux'
 import axios from 'axios'
 
@@ -17,6 +17,7 @@ class EditProfile extends Component {
             editEmail: '',
             id: 0
         };
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     componentDidMount() {
@@ -32,6 +33,13 @@ class EditProfile extends Component {
         })
     }
 
+    async handleEdit() {
+        let { editAddress, editPhone, editImage, editEmail, id } = this.state
+        // console.log(editAddress, editPhone, editImage, editEmail, id)
+        await this.props.editProfile({ editEmail, editAddress, editPhone, editImage, id })
+        await this.props.getProfile()
+    }
+
 
     handleInputs = (val, state) => {
         // console.log(this.state);
@@ -42,8 +50,7 @@ class EditProfile extends Component {
 
 
     render() {
-        // console.log(this.state.id)
-        let { editAddress, editPhone, editImage, editEmail, id } = this.state
+        // console.log(this.props)
         return (
 
             <div>
@@ -65,7 +72,7 @@ class EditProfile extends Component {
                 </h4>
 
 
-                <Link to='/employeeprofile'><button onClick={() => this.props.editProfile({ editEmail, editAddress, editPhone, editImage, id })}>Submit</button></Link>
+                <Link to='/employeeprofile'><button onClick={this.handleEdit}>Submit</button></Link>
 
             </div>
         );
@@ -74,4 +81,4 @@ class EditProfile extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps, { editProfile })(EditProfile);
+export default connect(mapStateToProps, { editProfile, getProfile })(EditProfile);

@@ -4,22 +4,34 @@ import { connect } from 'react-redux'
 
 class Jobs extends Component {
 
+    constructor() {
+        super()
+
+        this.state = {
+
+        };
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
     componentDidMount() {
         this.props.getJobs()
     }
 
-    handleDelete = (e) => {
-        this.props.deleteJob(e)
+    async handleDelete(e) {
+        await this.props.deleteJob(e)
+
+        await this.props.getJobs()
     }
 
     render() {
         const { jobs } = this.props.job
         let jobsList = jobs.map((e, i) => {
             return <div key={i}>
-                Customer Name: {e.customer_name} <br />
-                Address: {e.customer_address} <br />
-                Job Details: {e.job_details} <br />
+                Customer Name: {e.name} <br />
+                Address: {e.address} <br />
+                Job Details: {e.details} <br />
                 Price: {e.price} <br />
+                Estimate Hours: {e.est_hours} <br />
                 <button onClick={() => this.handleDelete(e)}>Delete</button>
             </div>
         })

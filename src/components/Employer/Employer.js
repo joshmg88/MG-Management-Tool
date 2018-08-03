@@ -10,11 +10,11 @@ class Employer extends Component {
     }
 
     render() {
-        // console.log(this.props.getEmployees);
+        console.log(this.props);
         const { employees } = this.props.employee
 
         let employeeList = employees.map((employees, i) => {
-            return <p key={i}>{employees.name}{employees.address}</p>
+            return <p key={i}>{employees.name} <br /> {employees.address}</p>
         })
         return (
             <div>

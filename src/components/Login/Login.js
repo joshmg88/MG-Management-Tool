@@ -10,7 +10,6 @@ class Login extends Component {
         this.props.getUser()
     }
 
-
     render() {
         // console.log(this.props);
         const { auth_id } = this.props.user.user
@@ -25,8 +24,9 @@ class Login extends Component {
                         </div>
                     ) : (
                             <div>
+
                                 <a href={process.env.REACT_APP_LOGOUT}>
-                                    <button >Logout</button>
+                                    <button>Logout</button>
                                 </a>
                             </div>
                         )

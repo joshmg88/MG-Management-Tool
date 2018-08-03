@@ -15,6 +15,9 @@ const Header = (props) => {
                     && <Link to='/employeeprofile'>Employee Profile</Link>}
                 {props.user.role === 'employer' &&
                     <Link to='/employer'>Employer</Link>}
+                {props.user.role === 'employer'
+                    && <Link to='/jobs'>Jobs</Link>
+                }
 
                 <Login />
 
@@ -26,5 +29,4 @@ const Header = (props) => {
 const mapStateToProps = state => state.user;
 
 export default connect(mapStateToProps, null)(Header);
-        // <Link to='/jobs'>Jobs</Link>
         // <Link to='/employeelist'>Employee List</Link>

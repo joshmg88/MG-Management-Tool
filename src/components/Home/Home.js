@@ -39,18 +39,20 @@ class Home extends Component {
         // console.log(this.state)
         console.log(this.props)
         // let { role, id } = this.state
-        return (
-
-            <div>
-                <p>login, social media, company name</p>
+        if (this.props.user.didErr || this.props.user.user.role) {
+            return (
+                <div>
+                    <p>No Role</p>
+                </div>
+            )
+        } else {
+            return (
                 <div className='roleSelector'>
                     <button onClick={() => this.handleClick('employer')}>Sign up as Employer</button>
                     <button onClick={() => this.handleClick('employee')}>Sign up as Employee</button>
                 </div>
-
-
-            </div>
-        );
+            )
+        }
     }
 }
 
