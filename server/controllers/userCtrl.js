@@ -15,6 +15,16 @@ const getUser = (req, res) => {
     }
 }
 
+const updateRole = (req, res, next) => {
+    let { role, id } = req.body
+
+    console.log("updateRole Fired", role, id)
+    const db = req.app.get('db')
+    db.users.update_role(role, id).then(results => {
+        res.status(200).send(results)
+    }).catch(err => { console.log(err) })
+}
+
 const login = passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/',
     failureRedirect: 'http://localhost:3000/#/login'
@@ -23,5 +33,6 @@ const login = passport.authenticate('auth0', {
 module.exports = {
     logout,
     login,
-    getUser
+    getUser,
+    updateRole
 }

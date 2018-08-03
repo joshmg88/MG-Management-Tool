@@ -11,7 +11,7 @@ export function getJobs() {
     }
 }
 export function addJob(newJob) {
-    console.log(newJob)
+    // console.log(newJob)
     return {
         type: 'ADD_JOB',
         payload: axios.post('/api/addJob', newJob)
@@ -31,7 +31,7 @@ const initialState = {
 }
 
 export default function jobsReducer(state = initialState, action) {
-    console.log(action.type);
+    // console.log(action.type);
     switch (action.type) {
         case `${GET_JOBS}_FULFILLED`:
         case `${ADD_JOB}_FULFILLED`:

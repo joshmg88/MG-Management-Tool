@@ -2,17 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.css'
 import Login from '../Login/Login';
+import { connect } from 'react-redux'
 
 
-const Header = () => {
+const Header = (props) => {
+    console.log(props)
     return (
         <div>
             <nav className="navbar">
                 <Link to='/'>Home</Link>
-                <Link to='/employeeprofile'>Employee Profile</Link>
-                <Link to='/employer'>Employer</Link>
-                <Link to='/jobs'>Jobs</Link>
-                <Link to='/employeelist'>Employee List</Link>
+                {props.user.role === 'employee'
+                    && <Link to='/employeeprofile'>Employee Profile</Link>}
+                {props.user.role === 'employer' &&
+                    <Link to='/employer'>Employer</Link>}
+
                 <Login />
 
             </nav>
@@ -20,4 +23,8 @@ const Header = () => {
     );
 };
 
-export default Header;
+const mapStateToProps = state => state.user;
+
+export default connect(mapStateToProps, null)(Header);
+        // <Link to='/jobs'>Jobs</Link>
+        // <Link to='/employeelist'>Employee List</Link>

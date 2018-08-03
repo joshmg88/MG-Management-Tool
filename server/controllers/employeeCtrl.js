@@ -6,7 +6,7 @@ const getEmployees = (req, res, next) => {
 }
 
 const editProfile = (req, res, next) => {
-    console.log(req.body)
+    // console.log(req.body)
     let { editEmail, editAddress, editPhone, editImage, id } = req.body
     const db = req.app.get('db')
     db.employees.update_profile(editEmail, editAddress, editPhone, editImage, id).then(profile => {

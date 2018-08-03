@@ -45,6 +45,7 @@ class EditProfile extends Component {
         // console.log(this.state.id)
         let { editAddress, editPhone, editImage, editEmail, id } = this.state
         return (
+
             <div>
                 <h4 className="editImage">
                     image:

@@ -7,7 +7,7 @@ const session = require('express-session')
 const port = 3500;
 
 const strategy = require('./strategy')
-const { logout, login, getUser } = require('./controllers/userCtrl')
+const { logout, login, getUser, updateRole } = require('./controllers/userCtrl')
 const emplCtrl = require('./controllers/employeeCtrl')
 const jobsCtrl = require('./controllers/jobsCtrl')
 
@@ -66,6 +66,7 @@ app.put('/api/editProfile', emplCtrl.editProfile)
 app.get('/api/getJobs', jobsCtrl.getJobs)
 app.post('/api/addJob', jobsCtrl.addJob)
 app.delete('/api/deleteJob/:id', jobsCtrl.deleteJob)
+app.put('/api/updateRole', updateRole)
 
 app.get('/login', login);
 app.get('/logout', logout);
