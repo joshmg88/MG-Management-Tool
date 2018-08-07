@@ -10,6 +10,7 @@ const strategy = require('./strategy')
 const { logout, login, getUser, updateRole } = require('./controllers/userCtrl')
 const emplCtrl = require('./controllers/employeeCtrl')
 const jobsCtrl = require('./controllers/jobsCtrl')
+const emailCtrl = require('./controllers/emailCtrl')
 
 const app = express();
 app.use(bodyParser.json());
@@ -68,6 +69,7 @@ app.get('/api/getJobs', jobsCtrl.getJobs)
 app.post('/api/addJob', jobsCtrl.addJob)
 app.delete('/api/deleteJob/:id', jobsCtrl.deleteJob)
 app.put('/api/updateRole', updateRole)
+app.post('/api/mailer', emailCtrl.sendEmail)
 
 app.get('/login', login);
 app.get('/logout', logout);

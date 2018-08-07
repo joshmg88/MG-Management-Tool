@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getJobs, deleteJob } from '../../ducks/jobReducer'
+import { getEmployees } from '../../ducks/employeeReducer'
 import { connect } from 'react-redux'
 
 class Jobs extends Component {
@@ -15,6 +16,7 @@ class Jobs extends Component {
 
     componentDidMount() {
         this.props.getJobs()
+        this.props.getEmployees()
     }
 
     async handleDelete(e) {
@@ -25,6 +27,15 @@ class Jobs extends Component {
 
     render() {
         const { jobs } = this.props.job
+        const { employees } = this.props.employee
+
+
+        let myEmployees = employees.map((employees, i) => {
+            return <div key={i}>
+                {employees.name}
+            </div>
+        })
+
         let jobsList = jobs.map((e, i) => {
             return <div key={i}>
                 Customer Name: {e.name} <br />
@@ -33,8 +44,10 @@ class Jobs extends Component {
                 Price: {e.price} <br />
                 Estimate Hours: {e.est_hours} <br />
                 <button onClick={() => this.handleDelete(e)}>Delete</button>
+                {myEmployees}
             </div>
         })
+
         return (
             <div>
                 <h2>Assigned Jobs</h2>
@@ -48,4 +61,4 @@ class Jobs extends Component {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps, { getJobs, deleteJob })(Jobs);
+export default connect(mapStateToProps, { getJobs, deleteJob, getEmployees })(Jobs);

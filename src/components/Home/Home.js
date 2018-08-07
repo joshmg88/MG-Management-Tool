@@ -4,6 +4,8 @@ import axios from 'axios'
 import { updateRole } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
 
+import Quote from '../../components/Quote/Quote'
+
 class Home extends Component {
 
     constructor() {
@@ -42,7 +44,8 @@ class Home extends Component {
         if (this.props.user.didErr || this.props.user.user.role) {
             return (
                 <div>
-                    <p>No Role</p>
+                    <Quote />
+
                 </div>
             )
         } else {
@@ -50,9 +53,12 @@ class Home extends Component {
                 <div className='roleSelector'>
                     <button onClick={() => this.handleClick('employer')}>Sign up as Employer</button>
                     <button onClick={() => this.handleClick('employee')}>Sign up as Employee</button>
+                    <Quote />
                 </div>
             )
         }
+
+
     }
 }
 
@@ -60,44 +66,4 @@ class Home extends Component {
 let mapStateToProps = state => state;
 
 export default connect(mapStateToProps, { updateRole })(Home);
-        // <button onClick={() => this.props.updateRole({ role, id })}>Submit</button>
-        // <div className='quoteRequest'>
-        //     <p>
-        //         Your Name:
-        //         <br />
-        //         <span>
-    //             <input type="text" value size='30' />
-    //         </span>
-    //     </p>
-    //     <p>
-    //         Phone:
-    //         <br />
-    //         <span>
-    //             <input type="text" value size='30' />
-    //         </span>
-    //     </p>
-    //     <p>
-    //         Email Address:
-    //         <br />
-    //         <span>
-    //             <input type="text" value size='30' />
-    //         </span>
-    //     </p>
-    //     <p>
-    //         Address:
-    //         <br />
-    //         <span>
-    //             <input type="text" value size='30' />
-    //         </span>
-    //     </p>
-    //     <p>
-    //         Tell us about the project you are inquiring about:
-    //         <br />
-    //         <span>
-    //             <input type="text" value size='30' />
-    //         </span>
-    //     </p>
-    //     <p>
-    //         <input type="submit" value="REQUEST A QUOTE" className="" />
-    //     </p>
-    // </div>
+// <button onClick={() => this.props.updateRole({ role, id })}>Submit</button>
