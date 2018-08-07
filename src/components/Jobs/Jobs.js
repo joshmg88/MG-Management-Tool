@@ -31,8 +31,9 @@ class Jobs extends Component {
 
 
         let myEmployees = employees.map((employees, i) => {
+            console.log(employees)
             return <div key={i}>
-                {employees.name}
+                <a >{employees.name}</a>
             </div>
         })
 
@@ -44,7 +45,7 @@ class Jobs extends Component {
                 Price: {e.price} <br />
                 Estimate Hours: {e.est_hours} <br />
                 <button onClick={() => this.handleDelete(e)}>Delete</button>
-                {myEmployees}
+                {myEmployees} <br />
             </div>
         })
 

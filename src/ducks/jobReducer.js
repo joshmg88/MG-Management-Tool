@@ -3,6 +3,7 @@ import axios from 'axios'
 const GET_JOBS = 'GET_JOBS'
 const ADD_JOB = 'ADD_JOB'
 const DELETE_JOB = 'DELETE_JOB'
+const ASSIGNED_JOBS = 'ASSIGNED_JOBS'
 
 export function getJobs() {
     return {
@@ -25,6 +26,13 @@ export function deleteJob(job) {
     }
 }
 
+export function assignedJobs() {
+    return {
+        type: 'ASSIGNED_JOBS',
+        payload: axios.get('/api/assignedJobs')
+    }
+}
+
 const initialState = {
     jobs: [],
     didErr: false
@@ -36,6 +44,7 @@ export default function jobsReducer(state = initialState, action) {
         case `${GET_JOBS}_FULFILLED`:
         case `${ADD_JOB}_FULFILLED`:
         case `${DELETE_JOB}_FULFILLED`:
+        case `${ASSIGNED_JOBS}_FULFILLED`:
             return {
                 ...state,
                 jobs: action.payload.data
@@ -43,6 +52,7 @@ export default function jobsReducer(state = initialState, action) {
         case `${GET_JOBS}_REJECTED`:
         case `${ADD_JOB}_REJECTED`:
         case `${DELETE_JOB}_REJECTED`:
+        case `${ASSIGNED_JOBS}_REJECTED`:
             return {
                 ...state,
                 didErr: true

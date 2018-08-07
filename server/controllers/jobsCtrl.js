@@ -6,9 +6,9 @@ const getJobs = (req, res, next) => {
 }
 
 const addJob = (req, res, next) => {
-    let { customerName, customerAddress, jobDescription, estPrice, estHours } = req.body
+    let { customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours } = req.body
     const db = req.app.get('db')
-    db.jobs.add_Job([customerName, customerAddress, jobDescription, estPrice, estHours])
+    db.jobs.add_Job([customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours])
         .then(newJob => {
             res.status(200).send(newJob)
         }).catch(err => { console.log(err) })
@@ -24,8 +24,16 @@ const deleteJob = (req, res, next) => {
         }).catch(err => { console.log(err) })
 }
 
+const assignedJobs = (req, res, next) => {
+    const db = req.app.get('db')
+    db.jobs.assigned_jobs().then(assigned => {
+        res.status(200).send(assigned)
+    }).catch(err => { console.log(err) })
+}
+
 module.exports = {
     getJobs,
     addJob,
-    deleteJob
+    deleteJob,
+    assignedJobs
 }

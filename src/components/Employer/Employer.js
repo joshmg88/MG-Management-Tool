@@ -7,11 +7,14 @@ class Employer extends Component {
 
     componentDidMount() {
         this.props.getEmployees()
+
     }
 
     render() {
         console.log(this.props);
         const { employees } = this.props.employee
+
+
 
         let employeeList = employees.map((employees, i) => {
             return <p key={i}>{employees.name} <br /> {employees.address}</p>
@@ -20,6 +23,7 @@ class Employer extends Component {
             <div>
                 <h2>Employer Profile</h2>
                 {employeeList}
+
                 <JobForm />
 
             </div>
