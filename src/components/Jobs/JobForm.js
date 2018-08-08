@@ -26,47 +26,47 @@ class JobForm extends Component {
         // console.log(this.props);
         let { customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours } = this.state;
         return (
-            <form>
-                <label>
-                    Customer Name:
+            <div className="jobform">
+                <form >
+                    <label>
+                        Customer Name:
                     <br />
-                    <input type="text" value={this.state.customerName} onChange={(e) => this.handleInputs(e.target.value, "customerName")} />
-                </label>
-                <br />
-                <label>
-                    Customer Address:
+                        <input className="job-input" type="text" value={this.state.customerName} onChange={(e) => this.handleInputs(e.target.value, "customerName")} />
+                    </label>
                     <br />
-                    <input value={this.state.customerAddress} onChange={(e) => this.handleInputs(e.target.value, "customerAddress")} />
-                </label>
-                <br />
-                <label>
-                    Customer Phone Number:
+                    <label>
+                        Customer Address:
                     <br />
-                    <input value={this.state.customerPhone} onChange={(e) => this.handleInputs(e.target.value, "customerPhone")} />
-                </label>
-                <br />
-                <label>
-                    Job Description:
+                        <input className="job-input" value={this.state.customerAddress} onChange={(e) => this.handleInputs(e.target.value, "customerAddress")} />
+                    </label>
                     <br />
-                    <textarea value={this.state.jobDescription} onChange={(e) => this.handleInputs(e.target.value, "jobDescription")}></textarea>
-                </label>
-                <br />
-                <label>
-                    Price:
+                    <label>
+                        Customer Phone Number:
                     <br />
-                    <input type="number" value={this.state.estPrice} onChange={(e) => this.handleInputs(e.target.value, "estPrice")} />
-                </label>
-                <br />
-                <label>
-                    Hours:
+                        <input className="job-input" value={this.state.customerPhone} onChange={(e) => this.handleInputs(e.target.value, "customerPhone")} />
+                    </label>
                     <br />
-                    <input type="number" value={this.state.estHours} onChange={(e) => this.handleInputs(e.target.value, "estHours")} />
-                </label>
-                <br />
-                <button onClick={() => this.props.addJob({ customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours })}>Submit</button>
-
-
-            </form>
+                    <label>
+                        Job Description:
+                    <br />
+                        <textarea value={this.state.jobDescription} onChange={(e) => this.handleInputs(e.target.value, "jobDescription")}></textarea>
+                    </label>
+                    <br />
+                    <label>
+                        Price:
+                    <br />
+                        <input className="job-input" type="number" value={this.state.estPrice} onChange={(e) => this.handleInputs(e.target.value, "estPrice")} />
+                    </label>
+                    <br />
+                    <label>
+                        Hours:
+                    <br />
+                        <input className="job-input" type="number" value={this.state.estHours} onChange={(e) => this.handleInputs(e.target.value, "estHours")} />
+                    </label>
+                    <br />
+                    <button onClick={() => this.props.addJob({ customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours })}>Submit</button>
+                </form>
+            </div>
         );
     }
 }

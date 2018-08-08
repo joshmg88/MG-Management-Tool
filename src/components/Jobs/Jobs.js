@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getJobs, deleteJob } from '../../ducks/jobReducer'
+import { getJobs, deleteJob, selectEmployee } from '../../ducks/jobReducer'
 import { getEmployees } from '../../ducks/employeeReducer'
 import { connect } from 'react-redux'
 
@@ -26,26 +26,33 @@ class Jobs extends Component {
     }
 
     render() {
+        console.log(this.props)
         const { jobs } = this.props.job
         const { employees } = this.props.employee
 
 
-        let myEmployees = employees.map((employees, i) => {
-            console.log(employees)
-            return <div key={i}>
-                <a >{employees.name}</a>
-            </div>
-        })
 
-        let jobsList = jobs.map((e, i) => {
-            return <div key={i}>
-                Customer Name: {e.name} <br />
-                Address: {e.address} <br />
-                Job Details: {e.details} <br />
-                Price: {e.price} <br />
-                Estimate Hours: {e.est_hours} <br />
-                <button onClick={() => this.handleDelete(e)}>Delete</button>
-                {myEmployees} <br />
+        let jobsList = jobs.map((papaE, papaI) => {
+
+            return <div key={papaI}>
+                Customer Name: {papaE.name} <br />
+                Address: {papaE.address} <br />
+                Job Details: {papaE.details} <br />
+                Price: {papaE.price} <br />
+                Estimate Hours: {papaE.est_hours} <br />
+                <button onClick={() => this.handleDelete(papaE)}>Delete</button>
+
+
+                <select onChange={(e) => this.props.selectEmployee(e.target.value, papaE.job_id)}> {
+                    employees.map((e, i) => {
+                        return <option key={i} value={e.id}>
+
+                            {e.name}
+
+                        </option>
+
+
+                    })}</select> <br />
             </div>
         })
 
@@ -62,4 +69,4 @@ class Jobs extends Component {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps, { getJobs, deleteJob, getEmployees })(Jobs);
+export default connect(mapStateToProps, { getJobs, deleteJob, getEmployees, selectEmployee })(Jobs);

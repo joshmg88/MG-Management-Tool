@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const massive = require('massive')
 const passport = require('passport')
 const session = require('express-session')
+const cors = require('cors')
 const port = 3500;
 
 const strategy = require('./strategy')
@@ -14,6 +15,8 @@ const emailCtrl = require('./controllers/emailCtrl')
 
 const app = express();
 app.use(bodyParser.json());
+
+app.use(cors())
 
 app.use(
     session({
@@ -64,10 +67,11 @@ massive(process.env.CONNECTION_STRING)
 
 app.get('/api/employees', emplCtrl.getEmployees)
 app.put('/api/editProfile', emplCtrl.editProfile)
-app.get('/api/profile', emplCtrl.getProfile)
+app.get('/api/getProfile/:id', emplCtrl.getProfile)
 app.get('/api/getJobs', jobsCtrl.getJobs)
 app.post('/api/addJob', jobsCtrl.addJob)
-app.get('/api/assignedJobs', jobsCtrl.assignedJobs)
+app.get('/api/assignedJobs/:id', jobsCtrl.assignedJobs)
+app.put('/api/selectEmployee', jobsCtrl.selectEmployee)
 app.delete('/api/deleteJob/:id', jobsCtrl.deleteJob)
 app.put('/api/updateRole', updateRole)
 app.post('/api/mailer', emailCtrl.sendEmail)

@@ -26,8 +26,16 @@ const deleteJob = (req, res, next) => {
 
 const assignedJobs = (req, res, next) => {
     const db = req.app.get('db')
-    db.jobs.assigned_jobs().then(assigned => {
+    db.jobs.assigned_jobs(req.params.id).then(assigned => {
         res.status(200).send(assigned)
+    }).catch(err => { console.log(err) })
+}
+
+const selectEmployee = (req, res, next) => {
+    let { userId, jobId } = req.body
+    const db = req.app.get('db')
+    db.jobs.select_employee([userId, jobId]).then(select => {
+        res.status(200).send(select)
     }).catch(err => { console.log(err) })
 }
 
@@ -35,5 +43,6 @@ module.exports = {
     getJobs,
     addJob,
     deleteJob,
-    assignedJobs
+    assignedJobs,
+    selectEmployee
 }

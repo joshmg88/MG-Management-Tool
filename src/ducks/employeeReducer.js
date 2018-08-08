@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const GET_EMPLOYEES = 'GET_EMPLOYEES'
 const ADD_EMPLOYEES = 'ADD_EMPLOYEES'
-const DELETE_EMPLOYEES = 'DELETE_EMPLOYEES'
+// const DELETE_EMPLOYEES = 'DELETE_EMPLOYEES'
 const EDIT_PROFILE = 'EDIT_PROFILE'
 const GET_PROFILE = 'GET_PROFILE'
 
@@ -20,12 +20,12 @@ export function addEmployees(employees) {
     }
 }
 
-export function deleteEmployee(employees) {
-    return {
-        type: DELETE_EMPLOYEES,
-        payload: axios.delete(`/api/employees/${employees.id}`)
-    }
-}
+// export function deleteEmployee(employees) {
+//     return {
+//         type: DELETE_EMPLOYEES,
+//         payload: axios.delete(`/api/employees/${employees.id}`)
+//     }
+// }
 
 export function editProfile(profile) {
     return {
@@ -34,10 +34,10 @@ export function editProfile(profile) {
     }
 }
 
-export function getProfile() {
+export function getProfile(user) {
     return {
         type: GET_PROFILE,
-        payload: axios.get('/api/profile')
+        payload: axios.get(`/api/getProfile/${user}`)
     }
 }
 
@@ -50,7 +50,6 @@ export default function employeeReducer(state = initialState, action) {
     switch (action.type) {
         case `${GET_EMPLOYEES}_FULFILLED`:
         case `${ADD_EMPLOYEES}_FULFILLED`:
-        case `${DELETE_EMPLOYEES}_FULFILLED`:
         case `${GET_PROFILE}_FULFILLED`:
         case `${EDIT_PROFILE}_FULFILLED`:
             return {
@@ -59,7 +58,6 @@ export default function employeeReducer(state = initialState, action) {
             };
         case `${GET_EMPLOYEES}_REJECTED`:
         case `${ADD_EMPLOYEES}_REJECTED`:
-        case `${DELETE_EMPLOYEES}_REJECTED`:
         case `${EDIT_PROFILE}_REJECTED`:
         case `${GET_PROFILE}_REJECTED`:
             return {
@@ -70,3 +68,6 @@ export default function employeeReducer(state = initialState, action) {
             return state;
     }
 }
+
+// case `${DELETE_EMPLOYEES}_FULFILLED`:
+// case `${DELETE_EMPLOYEES}_REJECTED`:

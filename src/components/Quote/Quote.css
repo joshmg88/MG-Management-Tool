@@ -1,15 +1,21 @@
-.jobform{
+.quote{
     display: flex;
     justify-content: center;
     text-align: left;
     /* flex-wrap: wrap; */
 }
 
+sub{
+    vertical-align: baseline;
+}
 
-.job-input{
-    height: 5%;
+.quote-input{
     width: 100%;
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
+/* .quote-labels{
+    display: flex;
+    align-items: center;
+} */

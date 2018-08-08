@@ -4,6 +4,7 @@ const GET_JOBS = 'GET_JOBS'
 const ADD_JOB = 'ADD_JOB'
 const DELETE_JOB = 'DELETE_JOB'
 const ASSIGNED_JOBS = 'ASSIGNED_JOBS'
+const SELECT_EMPLOYEE = 'SELECT_EMPLOYEE'
 
 export function getJobs() {
     return {
@@ -26,10 +27,19 @@ export function deleteJob(job) {
     }
 }
 
-export function assignedJobs() {
+export function assignedJobs(user) {
     return {
         type: 'ASSIGNED_JOBS',
-        payload: axios.get('/api/assignedJobs')
+        payload: axios.get(`/api/assignedJobs/${user}`)
+    }
+}
+
+export function selectEmployee(userId, jobId) {
+    console.log(userId, jobId)
+    return {
+
+        type: 'SELECT_EMPLOYEE',
+        payload: axios.put('/api/selectEmployee', { userId, jobId })
     }
 }
 
@@ -45,6 +55,7 @@ export default function jobsReducer(state = initialState, action) {
         case `${ADD_JOB}_FULFILLED`:
         case `${DELETE_JOB}_FULFILLED`:
         case `${ASSIGNED_JOBS}_FULFILLED`:
+        case `${SELECT_EMPLOYEE}_FULFILLED`:
             return {
                 ...state,
                 jobs: action.payload.data
@@ -53,6 +64,7 @@ export default function jobsReducer(state = initialState, action) {
         case `${ADD_JOB}_REJECTED`:
         case `${DELETE_JOB}_REJECTED`:
         case `${ASSIGNED_JOBS}_REJECTED`:
+        case `${SELECT_EMPLOYEE}_REJECTED`:
             return {
                 ...state,
                 didErr: true

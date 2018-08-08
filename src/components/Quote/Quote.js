@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { connect } from 'react-redux'
+import './Quote.css'
 class Quote extends Component {
 
     constructor() {
@@ -37,47 +38,48 @@ class Quote extends Component {
     render() {
         console.log(this.props);
         return (
-            <div>
+            <div className="quote">
                 {
                     !this.props.user.user.id
                     &&
                     <form onSubmit={this.handleSubmit} method='post' className='quoteRequest'>
-                        <label>
-                            Your Name:
-                <br />
+                        <h3>Quote Request Information</h3>
+                        <label className="quote-labels">
+                            Your Name: <sub>(first, last)</sub>
+                            <br />
                             <span>
-                                <input type="text" value={this.state.name} size='30' onChange={(e) => this.handleChange(e.target.value, 'name')} />
+                                <input className="quote-input" type="text" value={this.state.name} onChange={(e) => this.handleChange(e.target.value, 'name')} />
                             </span>
                         </label>
-                        <label>
+                        <label className="quote-labels">
                             Phone:
                 <br />
-                            <span>
-                                <input type="text" value={this.state.phone} size='30' onChange={(e) => this.handleChange(e.target.value, 'phone')} />
-                            </span>
+                            <div>
+                                <input className="quote-input" type="text" value={this.state.phone} onChange={(e) => this.handleChange(e.target.value, 'phone')} />
+                            </div>
                         </label>
-                        <label>
-                            Email:
+                        <label className="quote-labels">
+                            Contact Email:
                 <br />
-                            <span>
-                                <input type="text" value={this.state.email} size='30' onChange={(e) => this.handleChange(e.target.value, 'email')} />
-                            </span>
+                            <div>
+                                <input className="quote-input" type="text" value={this.state.email} onChange={(e) => this.handleChange(e.target.value, 'email')} />
+                            </div>
                         </label>
-                        <label>
-                            Address:
-                <br />
-                            <span>
-                                <input type="text" value={this.state.address} size='30' onChange={(e) => this.handleChange(e.target.value, 'address')} />
-                            </span>
+                        <label className="quote-labels">
+                            Address: <sub>(street, city, state, zipcode)</sub>
+                            <br />
+                            <div>
+                                <input className="quote-input" type="text" value={this.state.address} onChange={(e) => this.handleChange(e.target.value, 'address')} />
+                            </div>
                         </label>
-                        <label>
+                        <label className="quote-labels">
                             Tell us about the project you are inquiring about:
                 <br />
-                            <span>
-                                <input type="text" value={this.state.details} size='30' onChange={(e) => this.handleChange(e.target.value, 'details')} />
-                            </span>
+                            <div>
+                                <input className="quote-input" type="text" value={this.state.details} onChange={(e) => this.handleChange(e.target.value, 'details')} />
+                            </div>
                         </label>
-                        <button>Request Quote</button>
+                        <button>Submit</button>
                     </form>
 
 

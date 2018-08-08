@@ -13,7 +13,7 @@ export default (
     <Switch>
         <Route exact path='/' component={Home} />
         <SecretRoute path='/employer' component={Employer} />
-        <SecretRoute path='/employeeprofile' component={EmployeeProfile} />
+        <SecretRoute path='/employeeprofile/:user_id' component={EmployeeProfile} />
         <SecretRoute path='/editprofile' component={EditProfile} />
         <SecretRoute path='/employeelist' component={EmployeeList} />
         <SecretRoute path='/jobs' component={Jobs} />

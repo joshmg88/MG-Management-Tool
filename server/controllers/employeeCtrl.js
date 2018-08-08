@@ -6,9 +6,10 @@ const getEmployees = (req, res, next) => {
 }
 
 const getProfile = (req, res, next) => {
+
     const db = req.app.get('db')
-    db.employees.get_profile().then(results => {
-        console.log("current profile", results[0])
+    db.employees.get_profile(req.params.id).then(results => {
+        // console.log("current profile", results[0])
         res.status(200).send(results[0])
     }).catch(err => { console.log(err) })
 }

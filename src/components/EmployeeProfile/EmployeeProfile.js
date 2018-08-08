@@ -13,13 +13,14 @@ class EmployeeProfile extends Component {
         super()
 
         this.state = {
-            // page: 'profile'
+
         };
     }
 
     componentDidMount() {
-        this.props.getProfile()
-        this.props.assignedJobs()
+        // console.log(this.props)
+        this.props.getProfile(this.props.match.params.user_id)
+        this.props.assignedJobs(this.props.match.params.user_id)
     }
 
     render() {

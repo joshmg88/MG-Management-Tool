@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { getUser } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
 
+import './Login.css'
+
 
 class Login extends Component {
 
@@ -14,19 +16,19 @@ class Login extends Component {
         // console.log(this.props);
         const { auth_id } = this.props.user.user
         return (
-            <div>
-                <div>
+            <div className="login">
+                <div >
                     {!auth_id ? (
                         <div>
                             <a href={process.env.REACT_APP_LOGIN}>
-                                <button >Login</button>
+                                <button className="login-btn">Login</button>
                             </a>
                         </div>
                     ) : (
                             <div>
 
                                 <a href={process.env.REACT_APP_LOGOUT}>
-                                    <button>Logout</button>
+                                    <button className="login-btn">Logout</button>
                                 </a>
                             </div>
                         )

@@ -1,5 +1,43 @@
 .navbar{
     display: flex;
-    justify-content: space-around;
-    margin: 25px;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    height: 5vh;
+    background-color: slategray;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    
 }
+
+.header{
+    display: flex;
+    background-image: url('https://images.pexels.com/photos/279719/pexels-photo-279719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    /* text-align: center; */
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    align-content: center;
+}
+
+.links{
+    padding: 25px;
+    color: black;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+    color: aqua
+}
+/* background-image: url("https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/23380241_1696225243784838_3351511845519727204_n.jpg?_nc_cat=0&oh=c300302ee7defb0ed68dff1fa8067c62&oe=5BCFC4E0"); */
+/* background-repeat: no-repeat;  */
