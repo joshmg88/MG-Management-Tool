@@ -2,11 +2,8 @@ const passport = require('passport')
 
 const logout = (req, res) => {
     req.session.destroy(() => {
-        if (process.env.LOCAL) {
-            res.redirect('http://localhost:3000/#/')
-        } else {
-            res.redirect('/')
-        }
+        // res.redirect('http://localhost:3000/#/')
+        res.redirect('/')
     })
 }
 
@@ -29,13 +26,12 @@ const updateRole = (req, res, next) => {
     }).catch(err => { console.log(err) })
 }
 
-const login = passport.authenticate('auth0', process.env.LOCAL ? {
-    successRedirect: 'http://localhost:3000/#/',
-    failureRedirect: 'http://localhost:3000/#/login'
-} : {
-        successRedirect: '/',
-        failureRedirect: '/login'
-    })
+const login = passport.authenticate('auth0', {
+    // successRedirect: 'http://localhost:3000/#/',
+    // failureRedirect: 'http://localhost:3000/#/login'
+    successRedirect: '/',
+    failureRedirect: '/login'
+})
 
 module.exports = {
     logout,
