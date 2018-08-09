@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { getProfile } from '../../ducks/employeeReducer'
 import { assignedJobs } from '../../ducks/jobReducer'
 import { Link } from 'react-router-dom'
+
+import './EmployeeProfile.css'
 // import EditProfile from '../EditProfile/EditProfile'
 
 class EmployeeProfile extends Component {
@@ -26,7 +28,7 @@ class EmployeeProfile extends Component {
     render() {
 
         console.log(this.props);
-        const { name, address, email } = this.props.employee.employees
+        const { name, address, email, phone } = this.props.employee.employees
         const { jobs } = this.props.job
 
         let assignedJob = jobs.map((e, i) => {
@@ -44,14 +46,19 @@ class EmployeeProfile extends Component {
             <div>
                 <h2>Employee Profile</h2>
                 <div className="employeeProfile">
-                    <h3>{name}</h3>
-                    <h3>{address}</h3>
-                    <h3>{email}</h3>
+                    <h4 className="title">Name:</h4>
+                    <p> {name}</p>
+                    <h4 className="title">Address:</h4>
+                    <p>{address}</p>
+                    <h4 className="title">Email:</h4>
+                    <p>{email}</p>
+                    <h4 className="title">Phone:</h4>
+                    <p>{phone}</p>
+                    <Link to='/editprofile'><button>Edit Profile</button></Link>
                 </div>
 
                 {assignedJob}
 
-                <Link to='/editprofile'><button>Edit Profile</button></Link>
 
             </div>
         );

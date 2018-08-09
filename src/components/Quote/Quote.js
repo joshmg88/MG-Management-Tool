@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { connect } from 'react-redux'
 import './Quote.css'
+import swal from 'sweetalert2'
 class Quote extends Component {
 
     constructor() {
@@ -26,7 +27,9 @@ class Quote extends Component {
             email,
             address,
             details
-        })
+        }).then(swal({
+            title: "Thank you for your request, we will get back to you within 24 hours."
+        }))
     }
 
     handleChange(val, state) {

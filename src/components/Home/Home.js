@@ -54,14 +54,13 @@ class Home extends Component {
             )
         } else {
             return (
-                <div className='roleSelector'>
-                    <button onClick={() => this.handleClick('employer')}>Sign up as Employer</button>
-                    <button onClick={() => this.handleClick('employee')}>Sign up as Employee</button>
+                <div className='home'>
 
-                    <h1 className="">Welcome to Expert Media Solutions</h1>
-                    <h4>We offer a wide range of products and services from single room automation to full home and or business automation including cameras, speakers, TVs, Lighting, projectors and projection screens. We use a variety of products to ensure you get the top of line enjoyment from our services.</h4>
-
+                    <button className="roleSelector" onClick={() => this.handleClick('employer')}>Sign up as Employer</button>
+                    <button className="roleSelector" onClick={() => this.handleClick('employee')}>Sign up as Employee</button>
                     <Quote />
+
+
                 </div>
             )
         }
