@@ -1,0 +1,17 @@
+.allJobs{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+    margin: 50px auto;
+}
+
+.customerList{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 100%;
+}
+
+.customerTitle{
+    border: 1px solid black 
+}

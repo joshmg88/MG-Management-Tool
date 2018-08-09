@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getJobs, deleteJob, selectEmployee } from '../../ducks/jobReducer'
 import { getEmployees } from '../../ducks/employeeReducer'
 import { connect } from 'react-redux'
+import './Jobs.css'
 
 class Jobs extends Component {
 
@@ -34,12 +35,17 @@ class Jobs extends Component {
 
         let jobsList = jobs.map((papaE, papaI) => {
 
-            return <div key={papaI}>
-                Customer Name: {papaE.name} <br />
-                Address: {papaE.address} <br />
-                Job Details: {papaE.details} <br />
-                Price: {papaE.price} <br />
-                Estimate Hours: {papaE.est_hours} <br />
+            return <div className='customerList' key={papaI}>
+                <h4 className='customerTitle'>Customer Name:</h4>
+                {papaE.name} <br />
+                <h4 className='customerTitle'>Address:</h4>
+                {papaE.address} <br />
+                <h4 className='customerTitle'>Job Details:</h4>
+                {papaE.details} <br />
+                <h4 className='customerTitle'>Price:</h4>
+                {papaE.price} <br />
+                <h4 className='customerTitle'>Est Hours:</h4>
+                {papaE.est_hours} <br />
                 <button onClick={() => this.handleDelete(papaE)}>Delete</button>
 
 
@@ -59,7 +65,9 @@ class Jobs extends Component {
         return (
             <div>
                 <h2>Assigned Jobs</h2>
-                {jobsList}
+                <div className="allJobs">
+                    {jobsList}
+                </div>
 
 
             </div>

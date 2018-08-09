@@ -4,6 +4,8 @@ import { editProfile, getProfile } from '../../ducks/employeeReducer'
 import { connect } from 'react-redux'
 import axios from 'axios'
 
+import './EditProfile.css'
+
 
 class EditProfile extends Component {
 
@@ -53,22 +55,19 @@ class EditProfile extends Component {
         // console.log(this.props)
         return (
 
-            <div>
-                <h4 className="editImage">
-                    image:
-                    <input type="file" value={this.state.editImage} onChange={(e) => this.handleInputs(e.target.value, "editImage")} />
+            <div className="editProfile">
+                <h2>Edit Profile:</h2>
+                <h4 className="title">
+                    Address: <br />
+                    <input className="profileInput" type="text" value={this.state.editAddress} onChange={(e) => this.handleInputs(e.target.value, "editAddress")} />
                 </h4>
-                <h4 className="editAddress">
-                    Address:
-                    <input type="text" value={this.state.editAddress} onChange={(e) => this.handleInputs(e.target.value, "editAddress")} />
+                <h4 className="title">
+                    Phone: <br />
+                    <input className="profileInput" type="text" value={this.state.editPhone} onChange={(e) => this.handleInputs(e.target.value, "editPhone")} />
                 </h4>
-                <h4 className="editPhone">
-                    Phone:
-                    <input type="text" value={this.state.editPhone} onChange={(e) => this.handleInputs(e.target.value, "editPhone")} />
-                </h4>
-                <h4>
-                    Email:
-                    <input type="text" value={this.state.editEmail} onChange={(e) => this.handleInputs(e.target.value, "editEmail")} />
+                <h4 className="title">
+                    Email: <br />
+                    <input className="profileInput" type="text" value={this.state.editEmail} onChange={(e) => this.handleInputs(e.target.value, "editEmail")} />
                 </h4>
 
 

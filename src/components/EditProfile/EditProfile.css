@@ -1,0 +1,17 @@
+.editProfile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 25px auto;
+    padding: 25px;
+    text-align: left;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.profileInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}

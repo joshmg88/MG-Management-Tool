@@ -32,12 +32,28 @@ class EmployeeProfile extends Component {
         const { jobs } = this.props.job
 
         let assignedJob = jobs.map((e, i) => {
-            return <div key={i}>
-                {e.name} <br />
-                {e.address} <br />
-                {e.phone} <br />
-                {e.details} <br />
-                {e.est_hours} <br />
+            return <div className="listItem" key={i}>
+                <h4 className="customer">
+                    Customer: <br />
+                </h4>
+                {e.name}
+                <h4 className="customer">
+                    Address: <br />
+                </h4>
+                {e.address}
+                <h4 className="customer">
+                    Phone:<br />
+                </h4>
+                {e.phone}
+                <h4 className="customer">
+                    Job Details: <br />
+                </h4>
+                {e.details}
+                <h4 className="customer">
+                    Estimate Hours: <br />
+                </h4>
+                {e.est_hours}
+
             </div>
         })
 
@@ -57,7 +73,11 @@ class EmployeeProfile extends Component {
                     <Link to='/editprofile'><button>Edit Profile</button></Link>
                 </div>
 
-                {assignedJob}
+                <h2>Assigned Jobs:</h2>
+
+                <div className="jobs">
+                    {assignedJob}
+                </div>
 
 
             </div>

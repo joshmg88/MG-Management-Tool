@@ -11,3 +11,25 @@
 .title{
     margin: 5px;
 }
+
+.jobs{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    /* border: 1px solid black; */
+    width: 75%;
+}
+
+.listItem{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    flex-direction: column;
+    width: 60%;   
+    padding: 5px;
+    margin: 5px;
+}
+
+.customer{
+    padding: 1px;
+}
