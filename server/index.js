@@ -5,7 +5,7 @@ const massive = require('massive')
 const passport = require('passport')
 const session = require('express-session')
 const cors = require('cors')
-const port = 3500;
+const port = process.env.PORT || 3500;
 
 const strategy = require('./strategy')
 const { logout, login, getUser, updateRole } = require('./controllers/userCtrl')
