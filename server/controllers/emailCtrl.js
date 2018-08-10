@@ -16,7 +16,7 @@ const sendEmail = (req, res) => {
         from: 'jms.quoterequest@gmail.com',
         to: 'joshmg88@gmail.com',
         subject: 'Quote Request',
-        text: `${name} ${phone} ${email} ${address} ${details}`
+        text: `Hello, my name is ${name}, ${details}, my contact info is ${phone} or email me at ${email}. ${address} `
     }).catch(err => console.log(err))
 }
 

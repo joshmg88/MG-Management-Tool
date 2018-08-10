@@ -50,5 +50,7 @@
     color: rgb(248, 244, 238);
     z-index: 2;
 }
-/* background-image: url("https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/23380241_1696225243784838_3351511845519727204_n.jpg?_nc_cat=0&oh=c300302ee7defb0ed68dff1fa8067c62&oe=5BCFC4E0"); */
-/* background-repeat: no-repeat;  */
+
+ul{
+    text-align: left;
+}

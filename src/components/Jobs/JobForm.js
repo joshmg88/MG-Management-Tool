@@ -23,7 +23,6 @@ class JobForm extends Component {
     }
 
     render() {
-        // console.log(this.props);
         let { customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours } = this.state;
         return (
             <div className="jobform">

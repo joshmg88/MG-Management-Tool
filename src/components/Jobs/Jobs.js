@@ -27,11 +27,8 @@ class Jobs extends Component {
     }
 
     render() {
-        console.log(this.props)
         const { jobs } = this.props.job
         const { employees } = this.props.employee
-
-
 
         let jobsList = jobs.map((papaE, papaI) => {
 
@@ -64,12 +61,10 @@ class Jobs extends Component {
 
         return (
             <div>
-                <h2>Assigned Jobs</h2>
+                <h2>Current Jobs</h2>
                 <div className="allJobs">
                     {jobsList}
                 </div>
-
-
             </div>
         );
     }

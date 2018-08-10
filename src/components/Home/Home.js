@@ -26,9 +26,6 @@ class Home extends Component {
             });
         })
     }
-
-
-
     async handleClick(val) {
         let { id } = this.state
         await this.setState({
@@ -36,36 +33,23 @@ class Home extends Component {
         })
         await this.props.updateRole(this.state.role, id)
     }
-
-
     render() {
-        // console.log(this.state)
         console.log(this.props)
-        // let { role, id } = this.state
         if (this.props.user.didErr || this.props.user.user.role) {
             return (
                 <div>
-
-
                     <Quote />
-
-
                 </div>
             )
         } else {
             return (
                 <div className='home'>
-
                     <button className="roleSelector" onClick={() => this.handleClick('employer')}>Sign up as Employer</button>
                     <button className="roleSelector" onClick={() => this.handleClick('employee')}>Sign up as Employee</button>
                     <Quote />
-
-
                 </div>
             )
         }
-
-
     }
 }
 
@@ -73,4 +57,3 @@ class Home extends Component {
 let mapStateToProps = state => state;
 
 export default connect(mapStateToProps, { updateRole })(Home);
-// <button onClick={() => this.props.updateRole({ role, id })}>Submit</button>

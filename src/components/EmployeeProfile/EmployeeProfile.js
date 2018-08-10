@@ -6,7 +6,6 @@ import { assignedJobs } from '../../ducks/jobReducer'
 import { Link } from 'react-router-dom'
 
 import './EmployeeProfile.css'
-// import EditProfile from '../EditProfile/EditProfile'
 
 class EmployeeProfile extends Component {
 
@@ -20,14 +19,11 @@ class EmployeeProfile extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props)
         this.props.getProfile(this.props.match.params.user_id)
         this.props.assignedJobs(this.props.match.params.user_id)
     }
 
     render() {
-
-        console.log(this.props);
         const { name, address, email, phone } = this.props.employee.employees
         const { jobs } = this.props.job
 

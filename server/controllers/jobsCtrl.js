@@ -16,7 +16,6 @@ const addJob = (req, res, next) => {
 }
 
 const deleteJob = (req, res, next) => {
-    console.log(req.params.id)
     const db = req.app.get('db')
     db.jobs.delete_job(req.params.id)
         .then(job => {

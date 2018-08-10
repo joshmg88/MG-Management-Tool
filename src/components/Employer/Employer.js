@@ -13,11 +13,7 @@ class Employer extends Component {
     }
 
     render() {
-        console.log(this.props);
         const { employees } = this.props.employee
-
-
-
         let employeeList = employees.map((employees, i) => {
             return <div className='employeeList' key={i}>
                 <h4 className="employeeInfo">Name:</h4>{employees.name} <br />
@@ -33,7 +29,9 @@ class Employer extends Component {
                     {employeeList}
                 </div>
 
+                <h3>New Job:</h3>
                 <JobForm />
+
 
             </div>
         );

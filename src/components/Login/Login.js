@@ -13,7 +13,6 @@ class Login extends Component {
     }
 
     render() {
-        // console.log(this.props);
         const { auth_id } = this.props.user.user
         return (
             <div className="login">
@@ -26,7 +25,6 @@ class Login extends Component {
                         </div>
                     ) : (
                             <div>
-
                                 <a href={process.env.REACT_APP_LOGOUT}>
                                     <button className="login-btn">Logout</button>
                                 </a>

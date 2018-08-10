@@ -24,7 +24,6 @@ class EditProfile extends Component {
 
     componentDidMount() {
         axios.get('/api/me').then(res => {
-            // console.log(res)
             this.setState({ id: res.data.id })
         }).catch((err) => {
             if (err) {
@@ -37,14 +36,12 @@ class EditProfile extends Component {
 
     async handleEdit() {
         let { editAddress, editPhone, editImage, editEmail, id } = this.state
-        // console.log(editAddress, editPhone, editImage, editEmail, id)
         await this.props.editProfile({ editEmail, editAddress, editPhone, editImage, id })
         await this.props.getProfile()
     }
 
 
     handleInputs = (val, state) => {
-        // console.log(this.state);
         this.setState({
             [state]: val
         });
@@ -52,7 +49,6 @@ class EditProfile extends Component {
 
 
     render() {
-        // console.log(this.props)
         return (
 
             <div className="editProfile">

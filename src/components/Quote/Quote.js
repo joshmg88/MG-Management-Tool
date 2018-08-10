@@ -39,7 +39,6 @@ class Quote extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="quote">
                 {
@@ -84,8 +83,6 @@ class Quote extends Component {
                         </label>
                         <button>Submit</button>
                     </form>
-
-
                 }
             </div>
         );

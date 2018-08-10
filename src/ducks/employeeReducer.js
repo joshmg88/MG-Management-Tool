@@ -2,7 +2,6 @@ import axios from 'axios'
 
 const GET_EMPLOYEES = 'GET_EMPLOYEES'
 const ADD_EMPLOYEES = 'ADD_EMPLOYEES'
-// const DELETE_EMPLOYEES = 'DELETE_EMPLOYEES'
 const EDIT_PROFILE = 'EDIT_PROFILE'
 const GET_PROFILE = 'GET_PROFILE'
 
@@ -19,13 +18,6 @@ export function addEmployees(employees) {
         payload: axios.post('/api/employees', employees)
     }
 }
-
-// export function deleteEmployee(employees) {
-//     return {
-//         type: DELETE_EMPLOYEES,
-//         payload: axios.delete(`/api/employees/${employees.id}`)
-//     }
-// }
 
 export function editProfile(profile) {
     return {
@@ -68,6 +60,3 @@ export default function employeeReducer(state = initialState, action) {
             return state;
     }
 }
-
-// case `${DELETE_EMPLOYEES}_FULFILLED`:
-// case `${DELETE_EMPLOYEES}_REJECTED`:

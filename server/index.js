@@ -39,7 +39,6 @@ app.use(passport.session());
 passport.use(strategy);
 
 passport.serializeUser((user, done) => {
-    console.log(user)
     const db = app.get('db');
     db.users
         .get_user_by_authid(user.id)
