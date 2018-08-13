@@ -43,8 +43,8 @@ class Home extends Component {
         } else {
             return (
                 <div className='home'>
-                    <button className="roleSelector" onClick={() => this.handleClick('employer')}>Sign up as Employer</button>
-                    <button className="roleSelector" onClick={() => this.handleClick('employee')}>Sign up as Employee</button>
+                    <button className="btn" onClick={() => this.handleClick('employer')}>Sign up as Employer</button>
+                    <button className="btn" onClick={() => this.handleClick('employee')}>Sign up as Employee</button>
                     <Quote />
                 </div>
             )
