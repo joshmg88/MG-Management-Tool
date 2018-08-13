@@ -16,7 +16,14 @@ sub{
     margin: 8px 0;
     box-sizing: border-box;
 }
-/* .quote-labels{
-    display: flex;
-    align-items: center;
-} */
+
+.btn{
+    border-radius: 10%;
+    background-color: #607D8B;
+    color: black;
+    
+}
+
+.btn:hover {
+    background-color: #CFD8DC
+} 

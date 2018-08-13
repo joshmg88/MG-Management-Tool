@@ -20,13 +20,13 @@ class Login extends Component {
                     {!auth_id ? (
                         <div>
                             <a href={process.env.REACT_APP_LOGIN}>
-                                <button className="login-btn">Login</button>
+                                <button className="btn">Login</button>
                             </a>
                         </div>
                     ) : (
                             <div>
                                 <a href={process.env.REACT_APP_LOGOUT}>
-                                    <button className="login-btn">Logout</button>
+                                    <button className="btn">Logout</button>
                                 </a>
                             </div>
                         )

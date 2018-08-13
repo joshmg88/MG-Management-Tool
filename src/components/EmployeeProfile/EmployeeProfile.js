@@ -66,7 +66,7 @@ class EmployeeProfile extends Component {
                     <p>{email}</p>
                     <h4 className="title">Phone:</h4>
                     <p>{phone}</p>
-                    <Link to='/editprofile'><button>Edit Profile</button></Link>
+                    <Link to='/editprofile'><button className='btn' >Edit Profile</button></Link>
                 </div>
 
                 <h2>Assigned Jobs:</h2>

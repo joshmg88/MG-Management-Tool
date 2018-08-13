@@ -5,3 +5,13 @@
 
 }
 
+.btn{
+    border-radius: 10%;
+    background-color: #607D8B;
+    color: black;
+    
+}
+
+.btn:hover {
+    background-color: #CFD8DC
+} 

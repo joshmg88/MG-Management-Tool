@@ -63,7 +63,7 @@ class JobForm extends Component {
                         <input className="job-input" type="number" value={this.state.estHours} onChange={(e) => this.handleInputs(e.target.value, "estHours")} />
                     </label>
                     <br />
-                    <button onClick={() => this.props.addJob({ customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours })}>Submit</button>
+                    <button className="btn" onClick={() => this.props.addJob({ customerName, customerAddress, customerPhone, jobDescription, estPrice, estHours })}>Submit</button>
                 </form>
             </div>
         );

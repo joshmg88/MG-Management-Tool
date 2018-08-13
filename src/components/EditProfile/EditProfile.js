@@ -67,7 +67,7 @@ class EditProfile extends Component {
                 </h4>
 
 
-                <Link to='/employeeprofile'><button onClick={this.handleEdit}>Submit</button></Link>
+                <Link to={`/employeeprofile/${this.state.id}`}><button className='btn' onClick={this.handleEdit}>Submit</button></Link>
 
             </div>
         );

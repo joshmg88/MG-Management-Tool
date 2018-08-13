@@ -4,7 +4,6 @@ import './Header.css'
 import Login from '../Login/Login';
 import { connect } from 'react-redux'
 
-// import About from '../About/About'
 
 
 const Header = (props) => {
@@ -25,8 +24,7 @@ const Header = (props) => {
 
                 <Login />
             </nav>
-
-            <div className="about">
+            <div className="about" >
                 <h1 className="welcome">Welcome to MG Management Tool</h1>
                 <h4 className='about-text'>The objective of this project is to give employers the abiity to manage their employees and show off their productss in one App. A few main features include: <br />
                     <ul>
@@ -36,10 +34,6 @@ const Header = (props) => {
                     </ul>
                 </h4>
             </div>
-
-
-
-
         </div>
     );
 };

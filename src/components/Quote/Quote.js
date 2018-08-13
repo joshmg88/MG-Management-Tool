@@ -75,13 +75,13 @@ class Quote extends Component {
                             </div>
                         </label>
                         <label className="quote-labels">
-                            Tell us about the project you are inquiring about:
+                            Tell us about your project:
                 <br />
                             <div>
                                 <input className="quote-input" type="text" value={this.state.details} onChange={(e) => this.handleChange(e.target.value, 'details')} />
                             </div>
                         </label>
-                        <button>Submit</button>
+                        <button className='btn'>Submit</button>
                     </form>
                 }
             </div>

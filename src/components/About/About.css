@@ -3,3 +3,18 @@ body{
     justify-content: center;
     align-content: center;
 }
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+    color: rgb(248, 244, 238);
+    z-index: 2;
+}
+
+ul{
+    text-align: left;
+}

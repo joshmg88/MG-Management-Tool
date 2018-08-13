@@ -8,10 +8,22 @@
 .customerList{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
+    border: 1px solid black;
+    margin: 20px;
     height: 100%;
 }
 
-.customerTitle{
+/* .customerTitle{
     border: 1px solid black 
+} */
+
+.btn{
+    border-radius: 10%;
+    background-color: #607D8B;
+    color: black;
+    
 }
+
+.btn:hover {
+    background-color: #CFD8DC
+} 

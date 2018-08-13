@@ -34,7 +34,6 @@ class Home extends Component {
         await this.props.updateRole(this.state.role, id)
     }
     render() {
-        console.log(this.props)
         if (this.props.user.didErr || this.props.user.user.role) {
             return (
                 <div>

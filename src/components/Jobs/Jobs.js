@@ -33,8 +33,8 @@ class Jobs extends Component {
         let jobsList = jobs.map((papaE, papaI) => {
 
             return <div className='customerList' key={papaI}>
-                <h4 className='customerTitle'>Customer Name:</h4>
-                {papaE.name} <br />
+                <h3 className='customerTitle'>Customer Name:</h3>
+                <h4>{papaE.name}</h4> <br />
                 <h4 className='customerTitle'>Address:</h4>
                 {papaE.address} <br />
                 <h4 className='customerTitle'>Job Details:</h4>
@@ -43,7 +43,7 @@ class Jobs extends Component {
                 {papaE.price} <br />
                 <h4 className='customerTitle'>Est Hours:</h4>
                 {papaE.est_hours} <br />
-                <button onClick={() => this.handleDelete(papaE)}>Delete</button>
+                <button className="btn" onClick={() => this.handleDelete(papaE)}>Delete</button>
 
 
                 <select onChange={(e) => this.props.selectEmployee(e.target.value, papaE.job_id)}> {
