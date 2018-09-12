@@ -1,29 +1,33 @@
-.allJobs{
-    display: flex;
-    justify-content: center;
-    /* flex-direction: row; */
-    margin: 50px auto;
+.allJobs {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: row; */
+  margin: 1% auto;
 }
 
-.customerList{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    margin: 20px;
-    height: 100%;
+.customerList {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px #e4e0e0;
+  margin: 1%;
+  height: 100%;
 }
 
-/* .customerTitle{
-    border: 1px solid black 
-} */
+.customerTitle {
+  margin: 5%;
+}
 
-.btn{
-    border-radius: 10%;
-    background-color: #607D8B;
-    color: black;
-    
+.btn {
+  border-radius: 10%;
+  background-color: #607d8b;
+  color: black;
 }
 
 .btn:hover {
-    background-color: #CFD8DC
-} 
+  background-color: #cfd8dc;
+}
+
+.customerName {
+  margin: 1%;
+}

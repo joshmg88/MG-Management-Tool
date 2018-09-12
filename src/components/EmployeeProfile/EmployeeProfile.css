@@ -1,46 +1,46 @@
-.employeeProfile{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    margin: 0 auto;    
-    width: 30%;
-    border: 1px solid black;
+.employeeProfile {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30%;
+  border: 1px solid black;
 }
 
-.title{
-    margin: 5px;
+.title {
+  margin: 5px;
 }
 
-.jobs{
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
-    /* border: 1px solid black; */
-    width: 75%;
+.jobs {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  /* border: 1px solid black; */
+  width: 75%;
 }
 
-.listItem{
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
-    flex-direction: column;
-    width: 60%;   
-    padding: 5px;
-    margin: 5px;
+.listItem {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  flex-direction: column;
+  width: 20%;
+  padding: 5px;
+  margin: 5px;
 }
 
-.customer{
-    padding: 1px;
+.customer {
+  width: 100%;
+  padding: 1px;
 }
 
-.btn{
-    border-radius: 10%;
-    background-color: #607D8B;
-    color: black;
-    
+.btn {
+  border-radius: 10%;
+  background-color: #607d8b;
+  color: black;
 }
 
 .btn:hover {
-    background-color: #CFD8DC
-} 
+  background-color: #cfd8dc;
+}

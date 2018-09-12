@@ -1,18 +1,19 @@
-.employees{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin: 0 auto;
-    padding: 10px;
+.employees {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-.employeeInfo{
-    padding: 5px;
-    margin: 0 auto;
-    
+.employeeInfo {
+  padding: 5px;
+  margin: 0 auto;
 }
 
-.employeeList{
-    padding: 10px;
-    /* border: 1px solid black; */
+.employeeList {
+  margin: 1%;
+  padding: 10px;
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px #e4e0e0;
 }
